@@ -1,0 +1,23 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.reservation,
+.registration,
+.report,
+.report-details,
+.summary {
+  padding: 2rem;
+  margin: 4rem 0;
+}
+
+.report-actions {
+  padding-right: 15px;
+}
+
