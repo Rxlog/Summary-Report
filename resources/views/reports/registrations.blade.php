@@ -6,19 +6,19 @@
         @endslot
 
         @slot('daily')
-            {{ $registrations['overall_total']['daily'] }}
+            {{ $registrations['registrations_total']['daily'] }}
         @endslot
 
         @slot('weekly')
-            {{ $registrations['overall_total']['weekly'] }}
+            {{ $registrations['registrations_total']['weekly'] }}
         @endslot
 
         @slot('monthly')
-            {{ $registrations['overall_total']['monthly'] }}
+            {{ $registrations['registrations_total']['monthly'] }}
         @endslot
 
         @slot('grandTotal')
-            {{ $registrations['overall_total']['grand_total'] }}
+            {{ $registrations['registrations_total']['grand_total'] }}
         @endslot
     @endcomponent
 
@@ -28,7 +28,7 @@
         @endslot
 
         @slot('tableBody')
-            @foreach($registrations['details'] as $type => $registration)
+            @foreach($registrations['registration_details'] as $type => $registration)
                 <tr>
                     @foreach($registration as $registrationDetails)
                         <td>{{ $registrationDetails }}</td>

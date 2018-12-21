@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $reservations['overall_total']['grand_total']
+                        $reservations['reservations_total']['grand_total']
                     }}"></count-number>
                 </h2>
                 <p class="d-flex justify-content-center">
@@ -44,7 +44,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $reservations['details']['international']['total']
+                        $reservations['reservation_details']['international']['total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -58,7 +58,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $reservations['details']['domestic']['total']
+                        $reservations['reservation_details']['domestic']['total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -74,7 +74,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                            $reservations['details']['trucking']['total']
+                            $reservations['reservation_details']['trucking']['total']
                         }}"></count-number>
                 </h2>
             </div>
@@ -88,7 +88,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $reservations['details']['customs_broker']['total']
+                        $reservations['reservation_details']['customs_broker']['total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -102,7 +102,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $reservations['details']['warehouse']['total']
+                        $reservations['reservation_details']['warehouse']['total']
                     }}"></count-number>
                 </h2>
             </div>

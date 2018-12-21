@@ -6,19 +6,19 @@
         @endslot
 
         @slot('daily')
-            {{ $reports['reservations_total']['daily'] }}
+            {{ $reservations['reservations_total']['daily'] }}
         @endslot
 
         @slot('weekly')
-            {{ $reports['reservations_total']['weekly'] }}
+            {{ $reservations['reservations_total']['weekly'] }}
         @endslot
 
         @slot('monthly')
-            {{ $reports['reservations_total']['monthly'] }}
+            {{ $reservations['reservations_total']['monthly'] }}
         @endslot
 
         @slot('grandTotal')
-            {{ $reports['reservations_total']['grand_total'] }}
+            {{ $reservations['reservations_total']['grand_total'] }}
         @endslot
     @endcomponent
 
@@ -28,19 +28,19 @@
         @endslot
 
         @slot('daily')
-            {{ $reports['teus_total']['daily'] }}
+            {{ $reservations['teus_total']['daily'] }}
         @endslot
 
         @slot('weekly')
-            {{ $reports['teus_total']['weekly'] }}
+            {{ $reservations['teus_total']['weekly'] }}
         @endslot
 
         @slot('monthly')
-            {{ $reports['teus_total']['monthly'] }}
+            {{ $reservations['teus_total']['monthly'] }}
         @endslot
 
         @slot('grandTotal')
-            {{ $reports['teus_total']['grand_total'] }}
+            {{ $reservations['teus_total']['grand_total'] }}
         @endslot
     @endcomponent
 
@@ -50,7 +50,7 @@
         @endslot
 
         @slot('tableBody')
-            @foreach($reports['reservation_details'] as $type => $reservation)
+            @foreach($reservations['reservation_details'] as $type => $reservation)
                 <tr>
                     @foreach($reservation as $reservationDetails)
                         <td>{{ $reservationDetails }}</td>
@@ -66,7 +66,7 @@
         @endslot
 
         @slot('tableBody')
-            @foreach($reports['company_with_reservations'] as $type => $companyReservation)
+            @foreach($reservations['company_with_reservations'] as $type => $companyReservation)
                 <tr>
                     @foreach($companyReservation as $companyReservationDetails)
                         <td>{{ $companyReservationDetails }}</td>
@@ -82,7 +82,7 @@
         @endslot
 
         @slot('tableBody')
-            @foreach($reports['teu_details'] as $type => $teu)
+            @foreach($reservations['teu_details'] as $type => $teu)
                 <tr>
                     @foreach($teu as $teuDetails)
                         <td>

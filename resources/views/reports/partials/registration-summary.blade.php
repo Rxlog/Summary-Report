@@ -3,7 +3,7 @@
         <h1>Registration Report</h1>
         <span>
             <a class="btn btn-dark" href={{ route('registration-report') }}>
-                View Details
+                View details
             </a>
         </span>
     </div>
@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $registrations['overall_total']['grand_total']
+                        $registrations['registrations_total']['grand_total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -36,7 +36,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $registrations['details']['shipper_domestic']['total']
+                        $registrations['registration_details']['shipper_domestic']['total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -50,7 +50,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                            $registrations['details']['shipper_international']['total']
+                            $registrations['registration_details']['shipper_international']['total']
                         }}"></count-number>
                 </h2>
             </div>
@@ -64,7 +64,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                            $registrations['details']['shipper_consignee']['total']
+                            $registrations['registration_details']['shipper_consignee']['total']
                         }}"></count-number>
                 </h2>
             </div>
@@ -80,7 +80,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                            $registrations['details']['shipping_line']['total']
+                            $registrations['registration_details']['shipping_line']['total']
                         }}"></count-number>
                 </h2>
             </div>
@@ -94,7 +94,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                            $registrations['details']['trucker']['total']
+                            $registrations['registration_details']['trucker']['total']
                         }}"></count-number>
                 </h2>
             </div>
@@ -108,7 +108,7 @@
             <div class="card-body">
                 <h2 class="card-title d-flex justify-content-center">
                     <count-number to="{{
-                        $registrations['details']['customs_broker']['total']
+                        $registrations['registration_details']['customs_broker']['total']
                     }}"></count-number>
                 </h2>
             </div>
@@ -122,7 +122,7 @@
             <div class="card-body d-flex justify-content-center">
                 <h2 class="card-title">
                     <count-number to="{{
-                        $registrations['details']['warehouse']['total']
+                        $registrations['registration_details']['warehouse']['total']
                     }}"></count-number>
                 </h2>
             </div>

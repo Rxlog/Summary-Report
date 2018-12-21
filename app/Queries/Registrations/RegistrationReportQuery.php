@@ -26,13 +26,13 @@ class RegistrationReportQuery
     public function __invoke()
     {
         return collect([
-            'overall_total' => [
+            'registrations_total' => [
                 'daily' => $this->computeDailyRegistrations(),
                 'weekly' => $this->computeWeeklyRegistrations(),
                 'monthly' => $this->computeMonthlyRegistrations(),
                 'grand_total' => $this->computeTotalRegistrations()
             ],
-            'details' => $this->formatRegistrationDetails()
+            'registration_details' => $this->formatRegistrationDetails()
         ]);
     }
 }

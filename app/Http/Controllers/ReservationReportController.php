@@ -9,6 +9,6 @@ class ReservationReportController extends Controller
 {
     public function __invoke(ReservationReportQuery $reservations)
     {
-        return view('reports.reservations')->with('reports', $reservations());
+        return view('reports.reservations')->with('reservations', $reservations());
     }
 }
