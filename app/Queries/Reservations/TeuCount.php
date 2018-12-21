@@ -95,7 +95,7 @@ trait TeuCount
      * @return interger
      */
     private function countTEUS($reservations)
-    {g
+    {
         $details = ['total_containers' => 0, 'total_teus' => 0];
 
         foreach ($reservations as $reservation) {
