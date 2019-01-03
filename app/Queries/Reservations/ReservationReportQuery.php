@@ -27,7 +27,6 @@ class ReservationReportQuery
         $this->initWarehouseReservations();
 
         /** Initialize TEUS */
-        $this->initContainerSizes();
         $this->initDomesticShippingTeus();
         $this->initInternationalShippingTeus();
         $this->initTotalTEUS();

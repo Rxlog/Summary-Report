@@ -32,11 +32,6 @@ trait TeuCount
 
     protected $containerSizes;
 
-    public function initContainerSizes()
-    {
-        $this->containerSizes = ContainerSize::get();
-    }
-
     protected function initDomesticShippingTeus()
     {
         $domesticShippingReservations = ShippingReservation::domestic()
@@ -99,7 +94,6 @@ trait TeuCount
         $details = ['total_containers' => 0, 'total_teus' => 0];
 
         foreach ($reservations as $reservation) {
-            $containerCount = $reservation->containerSizes->count();
             foreach ($reservation->containerSizes as $containerSize) {
                 $details['total_containers'] += 1;
                 $details['total_teus'] += $containerSize->teu;
