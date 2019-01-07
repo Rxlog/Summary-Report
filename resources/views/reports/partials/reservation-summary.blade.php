@@ -1,110 +1,112 @@
-<div class="row">
-    <div class="col-md-12 d-flex justify-content-between">
-        <h1>Reservation Report</h1>
+<div class="row summary-report__header">
+    <div class="col-md-12 d-flex justify-content-between align-items-center">
+        <h1><i class="fas fa-chart-line"></i> Reservation Report</h1>
         <span>
-            <a class="btn btn-dark" href="{{ route('reservation-report') }}">
-                View Details
+            <a class="btn btn-primary" href="{{ route('reservation-report') }}">
+                View Details <i class="fa fa-angle-right"></i>
             </a>
         </span>
     </div>
-    <div class="col-md-12">
-        <hr>
-    </div>
 </div>
-<div class="row justify-content-center mb-3">
-    <div class="col-md-3">
-        <div class="card text-white bg-dark">
-            <div class="card-header d-flex justify-content-center">
-                <strong>GRAND TOTAL</strong>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                        $reservations['reservations_total']['grand_total']
-                    }}"></count-number>
-                </h2>
-                <p class="d-flex justify-content-center">
-                    Total # of companies:
+<div class="summary-report__details shadow-sm text-primary">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-12">
+            <div class="card bg-default border-primary">
+                <div class="card-body">
+                    <h1 class="card-title d-flex justify-content-center">
+                        Grand Total
+                    </h1>
+                    <h1 class="card-title d-flex justify-content-center">
+                        <i class="fas fa-poll-h"></i>
+                        <strong>
+                            <count-number to="{{
+                                $reservations['reservations_total']['grand_total']
+                            }}"></count-number>
+                        </strong>
+                    </h1>
+                </div>
+                <div class="card-footer border-primary bg-primary-light d-flex justify-content-center">
+                    <strong>Total # of companies:</strong>
                     <span class="ml-1">
                         <count-number to="{{
                             $reservations['companies_total']}}"
                         ></count-number>
                     </span>
-                </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row justify-content-center mb-3">
-    <div class="col-md-3">
-        <div class="card text-white bg-primary">
-            <div class="card-header d-flex justify-content-center">
-                Shipping (International)
-            </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                        $reservations['reservation_details']['international']['total']
-                    }}"></count-number>
-                </h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card text-white bg-primary">
-            <div class="card-header d-flex justify-content-center">
-                Shipping (Domestic)
-            </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                        $reservations['reservation_details']['domestic']['total']
-                    }}"></count-number>
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col-md-3">
-        <div class="card text-white bg-primary">
-            <div class="card-header d-flex justify-content-center">
-                Trucking
-            </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                            $reservations['reservation_details']['trucking']['total']
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white d-flex justify-content-center">
+                    Shipping (International)
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center">
+                        <count-number to="{{
+                            $reservations['reservation_details']['international']['total']
                         }}"></count-number>
-                </h2>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white d-flex justify-content-center">
+                    Shipping (Domestic)
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center">
+                        <count-number to="{{
+                            $reservations['reservation_details']['domestic']['total']
+                        }}"></count-number>
+                    </h2>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="card text-white bg-primary">
-            <div class="card-header d-flex justify-content-center">
-                Customs Broker
-            </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                        $reservations['reservation_details']['customs_broker']['total']
-                    }}"></count-number>
-                </h2>
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-4">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white d-flex justify-content-center">
+                    Trucking
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center">
+                        <count-number to="{{
+                                $reservations['reservation_details']['trucking']['total']
+                            }}"></count-number>
+                    </h2>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card text-white bg-primary">
-            <div class="card-header d-flex justify-content-center">
-                Warehouse
+        <div class="col-md-4">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white d-flex justify-content-center">
+                    Customs Broker
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center">
+                        <count-number to="{{
+                            $reservations['reservation_details']['customs_broker']['total']
+                        }}"></count-number>
+                    </h2>
+                </div>
             </div>
-            <div class="card-body">
-                <h2 class="card-title d-flex justify-content-center">
-                    <count-number to="{{
-                        $reservations['reservation_details']['warehouse']['total']
-                    }}"></count-number>
-                </h2>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white d-flex justify-content-center">
+                    Warehouse
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title d-flex justify-content-center">
+                        <count-number to="{{
+                            $reservations['reservation_details']['warehouse']['total']
+                        }}"></count-number>
+                    </h2>
+                </div>
             </div>
         </div>
     </div>

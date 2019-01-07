@@ -1,9 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <section class="reservation shadow-sm">
-        @include('reports.partials.reservation-summary')
-    </section>
-    <section class="registration shadow-sm">
-        @include('reports.partials.registration-summary')
+    <section class="reservation">
+        <div class="row">
+            <div class="col-sm-6">
+                @include('reports.partials.reservation-summary')
+            </div>
+            <div class="col-sm-6">
+                @include('reports.partials.registration-summary')
+            </div>
+        </div>
     </section>
 @endsection
