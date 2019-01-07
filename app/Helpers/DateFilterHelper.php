@@ -46,8 +46,10 @@ if (!function_exists('getMonthlyRecords')) {
     function getMonthlyRecords($collection, $date = null)
     {
         return $collection->filter(function ($record) use ($date) {
-            $date = $date ?? now()->month;
-            return $record->created_at->month === $date;
+            $date = $date ?? now();
+
+            return $record->created_at->month === $date->month &&
+                    $record->created_at->year === $date->year;
         });
     }
 }
