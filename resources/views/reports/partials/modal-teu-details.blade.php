@@ -7,25 +7,27 @@
                     TEU details
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Type</th>
+                            <th scope="col">Name</th>
                             <th scope="col">TEU points</th>
                             <th scope="col"># of Containers</th>
                             <th scope="col">Total</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                        <tr v-for="(countDetails, containerName) in containerDetails">
+                            <th scope="row" v-text="containerName"></th>
+                            <td v-text="countDetails.teus"></td>
+                            <td v-text="countDetails.containers"></td>
+                            <td>
+                                <strong>@{{ countDetails.teus * countDetails.containers }}</strong>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -33,10 +35,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         Close
-                    </button>
-                <button type="button" class="btn btn-primary">
-                        Save changes
-                    </button>
+                </button>
             </div>
         </div>
     </div>

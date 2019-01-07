@@ -76,27 +76,39 @@
         @endslot
     @endcomponent
 
-    @component('reports.components.report-details')
-        @slot('label')
-            Reservation details by # of TEUS
-        @endslot
+    <teus-report inline-template>
+        <section>
+            @component('reports.components.report-details')
+                @slot('label')
+                    Reservation details by # of TEUS
+                @endslot
 
-        @slot('tableBody')
-            @foreach($reservations['teu_details'] as $type => $teu)
-                <tr>
-                    @foreach($teu as $teuDetails)
-                        <td>
-                            {{-- <a href="#" data-toggle="modal"
-                                data-target="#teuContainerDetails"> --}}
-                                {{ $teuDetails['total_teus'] ?? $teuDetails }}
-                                {{-- <input type="hidden" value="{{ is_array($teuDetails) ? json_encode($teuDetails) : $teuDetails }}"> --}}
-                            {{-- </a> --}}
-                        </td>
+                @slot('tableBody')
+                    @foreach($reservations['teu_details'] as $type => $teu)
+                    <tr>
+                        @foreach($teu as $teuDetails)
+                            <td>
+                                @if(is_array($teuDetails))
+                                    <a href="#" @click="showDetails(
+                                            {{ json_encode($teuDetails) }}
+                                        )"
+                                        data-toggle="modal"
+                                        data-target="#teuContainerDetails">
+                                        {{ $teuDetails['total_teus'] }}
+                                    </a>
+                                @else
+                                    {{ $teuDetails }}
+                                @endif
+                            </td>
+                        @endforeach
+                    </tr>
                     @endforeach
-                </tr>
-            @endforeach
-        @endslot
-    @endcomponent
+                @endslot
+            @endcomponent
+
+            @include('reports.partials.modal-teu-details')
+        </section>
+    </teus-report>
 
     <section class="report-actions">
         <div class="row justify-content-end">
@@ -106,5 +118,4 @@
         </div>
     </section>
 
-    @include('reports.partials.modal-teu-details')
 @endsection
