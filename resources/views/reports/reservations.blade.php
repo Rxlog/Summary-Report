@@ -77,7 +77,7 @@
     @endcomponent
 
     <teus-report inline-template>
-        <section>
+        <section class="teus-report">
             @component('reports.components.report-details')
                 @slot('label')
                     Reservation details by # of TEUS
@@ -89,7 +89,8 @@
                         @foreach($teu as $teuDetails)
                             <td>
                                 @if(is_array($teuDetails))
-                                    <a href="#" @click="showDetails(
+                                    <a href="#"
+                                        @click="showDetails(
                                             {{ json_encode($teuDetails) }}
                                         )"
                                         data-toggle="modal"

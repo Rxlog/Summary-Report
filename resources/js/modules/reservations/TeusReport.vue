@@ -21,12 +21,17 @@
                     totalContainers += this.containerDetails[containerName].containers;
                     grandTotal += containerTeuTotal;
 
+                    // Add fourth column for the total count per container size name in the TEUS details modal
                     Vue.set(
                         this.containerDetails[containerName],
                         'total',
                         containerTeuTotal
                     );
 
+                    /*
+                    * Add sixth row in the TEUS details modal for total TEUS points,
+                    * total container sizes count and grandTotal (TEUS * Container Size)
+                    */
                     Vue.set(
                         this.containerDetails,
                         '',

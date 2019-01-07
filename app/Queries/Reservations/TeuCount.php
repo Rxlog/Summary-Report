@@ -32,11 +32,21 @@ trait TeuCount
 
     protected $containerNames;
 
+    /**
+     * Get container sizes name
+     *
+     * @return void
+     */
     protected function initContainerSizes()
     {
         $this->containerNames = ContainerSize::get(['name']);
     }
 
+    /**
+     * Initialize domestic shipping reservation TEUS
+     *
+     * @return void
+     */
     protected function initDomesticShippingTeus()
     {
         $domesticShippingReservations = ShippingReservation::domestic()
@@ -53,6 +63,11 @@ trait TeuCount
         $this->monthlyDomesticShippingTEUS = $this->countTEUS($monthlyDomesticShippingReservations);
     }
 
+    /**
+     * Initialize internation shipping TEUS
+     *
+     * @return void
+     */
     protected function initInternationalShippingTeus()
     {
         $internationalShippingReservations = ShippingReservation::international()
@@ -96,36 +111,61 @@ trait TeuCount
      */
     private function countTEUS($reservations)
     {
-        $details = ['total_containers' => 0, 'total_teus' => 0];
-        $teuPerContainerTypeCount = 0;
+        $details['container_details'] = $this->perContainerNameTotals($reservations);
+
+        $totalCounts = $this->containerSizesTotals($reservations);
+        $details['total_teus'] = $totalCounts['teus'];
+        $details['total_containers'] = $totalCounts['containers'];
+
+        return $details;
+    }
+
+
+    /**
+     * Get TEU & Container Sizes total count per container size name column
+     *
+     * @param collection $reservations
+     * @return collection
+     */
+    private function perContainerNameTotals($reservations)
+    {
+        $details = [];
         $containerPerTypeCount = 0;
+        $teuPerContainerTypeCount = 0;
 
         foreach ($this->containerNames as $container) {
             foreach ($reservations as $reservation) {
-                $containerPerTypeCount += $reservation->containerSizes->where('name', $container->name)->count();
                 $teuPerContainerTypeCount += $reservation->containerSizes->where('name', $container->name)->sum('teu');
-                $details['container_details'][$container->name] = [
-                    'containers' => $containerPerTypeCount,
+                $containerPerTypeCount += $reservation->containerSizes->where('name', $container->name)->count();
+                $details[$container->name] = [
                     'teus' => $teuPerContainerTypeCount,
+                    'containers' => $containerPerTypeCount,
                 ];
             }
             $teuPerContainerTypeCount = $containerPerTypeCount = 0;
         }
 
+        return $details;
+    }
+
+
+    /**
+     * Get TEU & Container Sizes total count
+     *
+     * @param collection $reservations
+     * @return collection
+     */
+    public function containerSizesTotals($reservations)
+    {
+        $details = ['teus' => 0, 'containers' => 0];
+
         foreach ($reservations as $reservation) {
             $totalTeu = $reservation->containerSizes->sum('teu');
             $totalContainers = $reservation->containerSizes->count();
 
-            $details['total_containers'] += $totalContainers;
-            $details['total_teus'] += $totalTeu;
-
-            // foreach ($reservation->containerSizes as $containerSize) {
-            //     $details['total_containers'] += 1;
-            //     $details['total_teus'] += $containerSize->teu;
-            // }
+            $details['teus'] += $totalTeu;
+            $details['containers'] += $totalContainers;
         }
-
-        logger($details);
 
         return $details;
     }
