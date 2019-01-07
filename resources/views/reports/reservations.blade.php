@@ -93,9 +93,8 @@
                                             {{ json_encode($teuDetails) }}
                                         )"
                                         data-toggle="modal"
-                                        data-target="#teuContainerDetails">
-                                        {{ $teuDetails['total_teus'] }}
-                                    </a>
+                                        data-target="#teuContainerDetails"
+                                    >{{ $teuDetails['total_teus'] }}</a>
                                 @else
                                     {{ $teuDetails }}
                                 @endif

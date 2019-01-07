@@ -17,17 +17,15 @@
                             <th scope="col">Name</th>
                             <th scope="col">TEU points</th>
                             <th scope="col"># of Containers</th>
-                            <th scope="col">Total</th>
+                            <th scope="col">TOTAL</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="(countDetails, containerName) in containerDetails">
-                            <th scope="row" v-text="containerName"></th>
-                            <td v-text="countDetails.teus"></td>
-                            <td v-text="countDetails.containers"></td>
-                            <td>
-                                <strong>@{{ countDetails.teus * countDetails.containers }}</strong>
-                            </td>
+                            <th scope="row" v-html="containerName"></th>
+                            <td v-html="countDetails.teus"></td>
+                            <td v-html="countDetails.containers"></td>
+                            <td><strong v-html="countDetails.total"></strong></td>
                         </tr>
                     </tbody>
                 </table>
