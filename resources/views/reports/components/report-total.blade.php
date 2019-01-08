@@ -46,7 +46,7 @@
                 </div>
                 <div class="card-body text-primary">
                     <h2 class="card-title d-flex justify-content-center">
-                        <count-number to="{{ $grandTotal }}"></count-number>
+                        <strong><count-number to="{{ $grandTotal }}"></count-number></strong>
                     </h2>
                 </div>
             </div>
