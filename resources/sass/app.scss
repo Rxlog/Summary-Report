@@ -10,18 +10,12 @@
 
 .reservation,
 .registration,
-.report,
-.report-details,
-.summary {
+.report, {
   padding: 2rem;
 }
 
 .report-actions {
   padding-right: 15px;
-}
-
-.btn {
-  border-radius: 0.5rem;
 }
 
 .summary-report__header {
@@ -60,6 +54,35 @@
     }
 }
 
+.total-report {
+  padding: 2rem;
+}
+
+.total-report__header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  color: $color-primary-dark;
+  border: 1px solid $color-primary-dark;
+  margin-bottom: 1rem;
+}
+
+.report-details {
+  margin: 0rem 2rem 3rem 2rem;
+}
+
+.report-details__header {
+  border: 1px solid $color-primary-dark;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 1rem;
+}
+
+/** Bootstrap overrides **/
+.btn {
+    border-radius: 0.5rem;
+}
+
 .text-primary {
   color: $color-primary-dark !important;
 }
@@ -70,5 +93,21 @@
 
 .bg-primary-light {
   background-color: $color-primary-light;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+table.table-bordered {
+    border: 1px solid $color-primary-dark;
+}
+
+table.table-bordered>thead>tr>th {
+    border: 1px solid $color-primary-dark;
+}
+
+table.table-bordered>tbody>tr>td {
+    border: 1px solid $color-primary-dark;
 }
 

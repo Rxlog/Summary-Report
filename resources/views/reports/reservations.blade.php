@@ -1,48 +1,53 @@
 @extends('layouts.app')
 @section('content')
-    @component('reports.components.report-total')
-        @slot('label')
-            Reservations
-        @endslot
+    <div class="row">
+        <div class="col-sm-6">
+            @component('reports.components.report-total')
+                @slot('label')
+                    Reservations
+                @endslot
 
-        @slot('daily')
-            {{ $reservations['reservations_total']['daily'] }}
-        @endslot
+                @slot('daily')
+                    {{ $reservations['reservations_total']['daily'] }}
+                @endslot
 
-        @slot('weekly')
-            {{ $reservations['reservations_total']['weekly'] }}
-        @endslot
+                @slot('weekly')
+                    {{ $reservations['reservations_total']['weekly'] }}
+                @endslot
 
-        @slot('monthly')
-            {{ $reservations['reservations_total']['monthly'] }}
-        @endslot
+                @slot('monthly')
+                    {{ $reservations['reservations_total']['monthly'] }}
+                @endslot
 
-        @slot('grandTotal')
-            {{ $reservations['reservations_total']['grand_total'] }}
-        @endslot
-    @endcomponent
+                @slot('grandTotal')
+                    {{ $reservations['reservations_total']['grand_total'] }}
+                @endslot
+            @endcomponent
+        </div>
+        <div class="col-sm-6">
+            @component('reports.components.report-total')
+                @slot('label')
+                    TEUS
+                @endslot
 
-    @component('reports.components.report-total')
-        @slot('label')
-            TEUS
-        @endslot
+                @slot('daily')
+                    {{ $reservations['teus_total']['daily'] }}
+                @endslot
 
-        @slot('daily')
-            {{ $reservations['teus_total']['daily'] }}
-        @endslot
+                @slot('weekly')
+                    {{ $reservations['teus_total']['weekly'] }}
+                @endslot
 
-        @slot('weekly')
-            {{ $reservations['teus_total']['weekly'] }}
-        @endslot
+                @slot('monthly')
+                    {{ $reservations['teus_total']['monthly'] }}
+                @endslot
 
-        @slot('monthly')
-            {{ $reservations['teus_total']['monthly'] }}
-        @endslot
-
-        @slot('grandTotal')
-            {{ $reservations['teus_total']['grand_total'] }}
-        @endslot
-    @endcomponent
+                @slot('grandTotal')
+                    {{ $reservations['teus_total']['grand_total'] }}
+                @endslot
+            @endcomponent
+        </div>
+    </div>
 
     @component('reports.components.report-details')
         @slot('label')
@@ -112,8 +117,8 @@
 
     <section class="report-actions">
         <div class="row justify-content-end">
-            <a href="{{ route('summary-report') }}" class="btn btn-secondary">
-                Back to Summary Report
+            <a href="{{ route('summary-report') }}" class="btn btn-primary">
+                <i class="fa fa-angle-left mr-1"></i> Back to Summary Report
             </a>
         </div>
     </section>

@@ -3,7 +3,7 @@
         <h1><i class="fas fa-chart-line"></i> Reservation Report</h1>
         <span>
             <a class="btn btn-primary" href="{{ route('reservation-report') }}">
-                View Details <i class="fa fa-angle-right"></i>
+                View Details <i class="fa fa-angle-right ml-1"></i>
             </a>
         </span>
     </div>

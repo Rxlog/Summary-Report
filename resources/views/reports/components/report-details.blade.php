@@ -1,18 +1,16 @@
-<section class="report-details shadow-sm">
-    <div class="row mb-3">
-        <div class="col-md-12 d-flex justify-content-between">
-            <h1>{{ $label }}</h1>
-        </div>
+<section class="report-details">
+    <div class="report-details__header">
+        <h2>{{ $label }}</h2>
     </div>
-    <div class="row mb-3">
-        <table class="table table-hover">
-            <thead>
+    <div class="report-details__content">
+        <table class="table table-hover table-bordered">
+            <thead class="bg-primary-light text-primary">
                 <tr>
                     <th scope="col">Type</th>
-                    <th scope="col">Today</th>
-                    <th scope="col">This week</th>
-                    <th scope="col">This month</th>
-                    <th scope="col">Total</th>
+                    <th class="text-center" scope="col">Today</th>
+                    <th class="text-center" scope="col">This week</th>
+                    <th class="text-center" scope="col">This month</th>
+                    <th class="text-center" scope="col">Total</th>
                 </tr>
             </thead>
             <tbody>
