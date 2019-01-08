@@ -25,8 +25,8 @@
                         </strong>
                     </h1>
                 </div>
-                <div class="card-footer border-primary bg-primary-light d-flex justify-content-center">
-                    <strong>Total # of companies:</strong>
+                <div class="card-footer border-primary bg-primary-light d-flex justify-content-center align-items-center">
+                    <i class="fas fa-building mr-1"></i> <strong>Total # of companies:</strong>
                     <span class="ml-1">
                         <count-number to="{{
                             $reservations['companies_total']}}"
@@ -39,8 +39,8 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-6">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shipping (International)
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-ship mr-1"></i> Shipping (International)
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -53,8 +53,8 @@
         </div>
         <div class="col-md-6">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shipping (Domestic)
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-ship mr-1"></i> Shipping (Domestic)
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -69,8 +69,8 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Trucking
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-truck mr-1"></i> Trucking
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -83,8 +83,8 @@
         </div>
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Customs Broker
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-people-carry mr-1"></i> Customs Broker
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -97,8 +97,8 @@
         </div>
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Warehouse
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-warehouse mr-1"></i> Warehouse
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">

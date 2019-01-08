@@ -31,8 +31,8 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shippers (Domestic)
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-ship mr-1"></i> Shippers (Domestic)
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -45,8 +45,8 @@
         </div>
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shippers (International)
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-ship mr-1"></i> Shippers (International)
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -59,8 +59,8 @@
         </div>
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shippers (Consignee)
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-ship mr-1"></i> Shippers (Consignee)
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -75,8 +75,8 @@
     <div class="row justify-content-center mb-4">
         <div class="col-md-3">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Shipping Lines
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-vector-square mr-1"></i> Shipping Lines
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -89,8 +89,8 @@
         </div>
         <div class="col-md-3">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Truckers
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-truck mr-1"></i> Truckers
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -103,8 +103,8 @@
         </div>
         <div class="col-md-3">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white justify-content-center">
-                    Customs Brokers
+                <div class="card-header bg-primary text-white justify-content-center align-items-center">
+                    <i class="fas fa-people-carry mr-1"></i> Customs Brokers
                 </div>
                 <div class="card-body">
                     <h2 class="card-title d-flex justify-content-center">
@@ -117,8 +117,8 @@
         </div>
         <div class="col-md-3">
             <div class="card border-primary">
-                <div class="card-header bg-primary text-white d-flex justify-content-center">
-                    Warehouses
+                <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
+                    <i class="fas fa-warehouse mr-1"></i> Warehouses
                 </div>
                 <div class="card-body d-flex justify-content-center">
                     <h2 class="card-title">
