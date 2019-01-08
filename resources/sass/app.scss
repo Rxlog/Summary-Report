@@ -8,6 +8,15 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.navbar--flat {
+  padding: 0;
+}
+
+.navbar__image {
+  width: 6rem;
+  height: 3rem;
+}
+
 .reports {
   padding: 4rem 2rem;
 }
