@@ -8,14 +8,30 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.reservation,
-.registration,
-.report, {
+.reports {
+  padding: 4rem 2rem;
+}
+
+.reservations,
+.registrations {
   padding: 2rem;
 }
 
 .report-actions {
   padding-right: 15px;
+}
+
+.summary-report__hero {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: $color-primary-dark;
+  color: $color-white;
+
+  i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
 }
 
 .summary-report__header {

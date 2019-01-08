@@ -10466,14 +10466,34 @@ a.text-dark:focus {
   }
 }
 
-.reservation,
-.registration,
-.report {
+.reports {
+  padding: 4rem 2rem;
+}
+
+.reservations,
+.registrations {
   padding: 2rem;
 }
 
 .report-actions {
   padding-right: 15px;
+}
+
+.summary-report__hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+  background-color: #224E85;
+  color: #FFFFFF;
+}
+
+.summary-report__hero i {
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 
 .summary-report__header {

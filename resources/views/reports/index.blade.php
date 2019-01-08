@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <section class="reservation">
+    <section class="reports">
         <div class="row">
             <div class="col-sm-6">
                 @include('reports.partials.reservation-summary')

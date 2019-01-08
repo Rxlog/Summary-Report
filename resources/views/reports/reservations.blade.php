@@ -1,126 +1,135 @@
 @extends('layouts.app')
+
 @section('content')
-    <div class="row">
-        <div class="col-sm-6">
-            @component('reports.components.report-total')
-                @slot('label')
-                    Reservations
-                @endslot
-
-                @slot('daily')
-                    {{ $reservations['reservations_total']['daily'] }}
-                @endslot
-
-                @slot('weekly')
-                    {{ $reservations['reservations_total']['weekly'] }}
-                @endslot
-
-                @slot('monthly')
-                    {{ $reservations['reservations_total']['monthly'] }}
-                @endslot
-
-                @slot('grandTotal')
-                    {{ $reservations['reservations_total']['grand_total'] }}
-                @endslot
-            @endcomponent
-        </div>
-        <div class="col-sm-6">
-            @component('reports.components.report-total')
-                @slot('label')
-                    TEUS
-                @endslot
-
-                @slot('daily')
-                    {{ $reservations['teus_total']['daily'] }}
-                @endslot
-
-                @slot('weekly')
-                    {{ $reservations['teus_total']['weekly'] }}
-                @endslot
-
-                @slot('monthly')
-                    {{ $reservations['teus_total']['monthly'] }}
-                @endslot
-
-                @slot('grandTotal')
-                    {{ $reservations['teus_total']['grand_total'] }}
-                @endslot
-            @endcomponent
-        </div>
-    </div>
-
-    @component('reports.components.report-details')
+    @component('reports.components.report-hero')
         @slot('label')
-            Reservation details by # of transactions
-        @endslot
-
-        @slot('tableBody')
-            @foreach($reservations['reservation_details'] as $type => $reservation)
-                <tr>
-                    @foreach($reservation as $reservationDetails)
-                        <td>{{ $reservationDetails }}</td>
-                    @endforeach
-                </tr>
-            @endforeach
+            Reservation
         @endslot
     @endcomponent
 
-    @component('reports.components.report-details')
-        @slot('label')
-            Reservation details by # of companies
-        @endslot
+    <section class="container-fluid reservations">
+        <div class="row">
+            <div class="col-sm-6">
+                @component('reports.components.report-total')
+                    @slot('label')
+                        Reservations
+                    @endslot
 
-        @slot('tableBody')
-            @foreach($reservations['company_with_reservations'] as $type => $companyReservation)
-                <tr>
-                    @foreach($companyReservation as $companyReservationDetails)
-                        <td>{{ $companyReservationDetails }}</td>
-                    @endforeach
-                </tr>
-            @endforeach
-        @endslot
-    @endcomponent
+                    @slot('daily')
+                        {{ $reservations['reservations_total']['daily'] }}
+                    @endslot
 
-    <teus-report inline-template>
-        <section class="teus-report">
-            @component('reports.components.report-details')
-                @slot('label')
-                    Reservation details by # of TEUS
-                @endslot
+                    @slot('weekly')
+                        {{ $reservations['reservations_total']['weekly'] }}
+                    @endslot
 
-                @slot('tableBody')
-                    @foreach($reservations['teu_details'] as $type => $teu)
+                    @slot('monthly')
+                        {{ $reservations['reservations_total']['monthly'] }}
+                    @endslot
+
+                    @slot('grandTotal')
+                        {{ $reservations['reservations_total']['grand_total'] }}
+                    @endslot
+                @endcomponent
+            </div>
+            <div class="col-sm-6">
+                @component('reports.components.report-total')
+                    @slot('label')
+                        TEUS
+                    @endslot
+
+                    @slot('daily')
+                        {{ $reservations['teus_total']['daily'] }}
+                    @endslot
+
+                    @slot('weekly')
+                        {{ $reservations['teus_total']['weekly'] }}
+                    @endslot
+
+                    @slot('monthly')
+                        {{ $reservations['teus_total']['monthly'] }}
+                    @endslot
+
+                    @slot('grandTotal')
+                        {{ $reservations['teus_total']['grand_total'] }}
+                    @endslot
+                @endcomponent
+            </div>
+        </div>
+
+        @component('reports.components.report-details')
+            @slot('label')
+                Reservation details by # of transactions
+            @endslot
+
+            @slot('tableBody')
+                @foreach($reservations['reservation_details'] as $type => $reservation)
                     <tr>
-                        @foreach($teu as $teuDetails)
-                            <td>
-                                @if(is_array($teuDetails))
-                                    <a href="#"
-                                        @click="showDetails(
-                                            {{ json_encode($teuDetails) }}
-                                        )"
-                                        data-toggle="modal"
-                                        data-target="#teuContainerDetails"
-                                    >{{ $teuDetails['total_teus'] }}</a>
-                                @else
-                                    {{ $teuDetails }}
-                                @endif
-                            </td>
+                        @foreach($reservation as $reservationDetails)
+                            <td>{{ $reservationDetails }}</td>
                         @endforeach
                     </tr>
-                    @endforeach
-                @endslot
-            @endcomponent
+                @endforeach
+            @endslot
+        @endcomponent
 
-            @include('reports.partials.modal-teu-details')
+        @component('reports.components.report-details')
+            @slot('label')
+                Reservation details by # of companies
+            @endslot
+
+            @slot('tableBody')
+                @foreach($reservations['company_with_reservations'] as $type => $companyReservation)
+                    <tr>
+                        @foreach($companyReservation as $companyReservationDetails)
+                            <td>{{ $companyReservationDetails }}</td>
+                        @endforeach
+                    </tr>
+                @endforeach
+            @endslot
+        @endcomponent
+
+        <teus-report inline-template>
+            <section class="teus-report">
+                @component('reports.components.report-details')
+                    @slot('label')
+                        Reservation details by # of TEUS
+                    @endslot
+
+                    @slot('tableBody')
+                        @foreach($reservations['teu_details'] as $type => $teu)
+                        <tr>
+                            @foreach($teu as $teuDetails)
+                                <td>
+                                    @if(is_array($teuDetails))
+                                        <a href="#"
+                                            @click="showDetails(
+                                                {{ json_encode($teuDetails) }}
+                                            )"
+                                            data-toggle="modal"
+                                            data-target="#teuContainerDetails"
+                                        >{{ $teuDetails['total_teus'] }}</a>
+                                    @else
+                                        {{ $teuDetails }}
+                                    @endif
+                                </td>
+                            @endforeach
+                        </tr>
+                        @endforeach
+                    @endslot
+                @endcomponent
+
+                @include('reports.partials.modal-teu-details')
+            </section>
+        </teus-report>
+
+        <section class="report-actions">
+            <div class="row justify-content-end">
+                <a href="{{ route('summary-report') }}" class="btn btn-primary">
+                    <i class="fa fa-angle-left mr-1"></i> Back to Summary Report
+                </a>
+            </div>
         </section>
-    </teus-report>
-
-    <section class="report-actions">
-        <div class="row justify-content-end">
-            <a href="{{ route('summary-report') }}" class="btn btn-primary">
-                <i class="fa fa-angle-left mr-1"></i> Back to Summary Report
-            </a>
-        </div>
     </section>
 
 @endsection

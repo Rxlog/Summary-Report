@@ -25,10 +25,8 @@
     <div id="app">
         @include('layouts.nav')
 
-        <main class="py-4 summary-report">
-            <div class="container-fluid">
-                @yield('content')
-            </div>
+        <main class="summary-report">
+            @yield('content')
         </main>
     </div>
 </body>
