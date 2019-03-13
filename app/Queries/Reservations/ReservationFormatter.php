@@ -1,11 +1,6 @@
 <?php
 namespace App\Queries\Reservations;
 
-use App\Models\ShippingReservation;
-use App\Models\TruckingReservation;
-use App\Models\CustomsBrokerReservation;
-use App\Models\WarehouseReservation;
-
 trait ReservationFormatter
 {
     /**
@@ -122,27 +117,6 @@ trait ReservationFormatter
                 'monthly' => $this->monthlyInternationalShippingTEUS,
                 'total' => $this->totalInternationalShippingTEUS,
             ]
-            // 'trucking' => [
-            //     'label' => 'Trucking',
-            //     'daily' => $this->dailyTruckingTEUS,
-            //     'weekly' => $this->weeklyTruckingTEUS,
-            //     'monthly' => $this->monthlyTruckingTEUS,
-            //     'total' => $this->totalTruckingTEUS,
-            // ],
-            // 'customs_broker' => [
-            //     'label' => 'Customs Broker',
-            //     'daily' => $this->dailyCustomsBrokerTEUS,
-            //     'weekly' => $this->weeklyCustomsBrokerTEUS,
-            //     'monthly' => $this->monthlyCustomsBrokerTEUS,
-            //     'total' => $this->totalCustomsBrokerTEUS
-            // ],
-            // 'warehouse' => [
-            //     'label' => 'Warehouse',
-            //     'daily' => $this->dailyCustomsBrokerTEUS,
-            //     'weekly' => $this->weeklyWarehouseTEUS,
-            //     'monthly' => $this->monthlyWarehouseTEUS,
-            //     'total' => $this->totalWarehouseTEUS
-            // ]
         ];
     }
 }

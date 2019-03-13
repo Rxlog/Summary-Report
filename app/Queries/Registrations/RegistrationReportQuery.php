@@ -1,12 +1,6 @@
 <?php
 namespace App\Queries\Registrations;
 
-use App\Models\Shipper;
-use App\Models\Trucker;
-use App\Models\CustomsBroker;
-use App\Models\Warehouse;
-use App\Models\RegistrationLead;
-
 class RegistrationReportQuery
 {
     use RegistrationCount, RegistrationComputation, RegistrationFormatter;

@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="row justify-content-center mb-4">
-        <div class="col-md-3">
+        <div class="col-xl-3 col-sm-6">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
                     <i class="fas fa-vector-square mr-1"></i> Shipping Lines
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-sm-6">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
                     <i class="fas fa-truck mr-1"></i> Truckers
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-sm-6">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white justify-content-center align-items-center">
                     <i class="fas fa-people-carry mr-1"></i> Customs Brokers
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3 col-sm-6">
             <div class="card border-primary">
                 <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center">
                     <i class="fas fa-warehouse mr-1"></i> Warehouses

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Queries\Reservations\ReservationReportQuery;
 
 class ReservationReportController extends Controller

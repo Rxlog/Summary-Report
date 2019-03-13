@@ -1,11 +1,6 @@
 <?php
 namespace App\Queries\Reservations;
 
-use App\Models\ShippingReservation;
-use App\Models\TruckingReservation;
-use App\Models\CustomsBrokerReservation;
-use App\Models\WarehouseReservation;
-
 class ReservationReportQuery
 {
     use ReservationCount,
