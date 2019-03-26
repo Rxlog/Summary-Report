@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('summary-report'));
 });
 
 Auth::routes();
@@ -22,5 +22,3 @@ Route::middleware('auth')->prefix('reports')->group(function () {
     Route::get('/reservation', 'ReservationReportController')->name('reservation-report');
     Route::get('/registration', 'RegistrationReportController')->name('registration-report');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
