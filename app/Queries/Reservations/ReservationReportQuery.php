@@ -3,11 +3,7 @@ namespace App\Queries\Reservations;
 
 class ReservationReportQuery
 {
-    use ReservationCount,
-        TeuCount,
-        ReservedCompaniesCount,
-        ReservationComputation,
-        ReservationFormatter;
+    use ReservationFormatter;
 
     /**
      * Initialize reservation counts
@@ -38,21 +34,11 @@ class ReservationReportQuery
     public function __invoke()
     {
         return collect([
-            'reservations_total' => [
-                'daily' => $this->computeDailyReservations(),
-                'weekly' => $this->computeWeeklyReservations(),
-                'monthly' => $this->computeMonthlyReservations(),
-                'grand_total' => $this->computeTotalReservations(),
-            ],
+            'reservations_total' => $this->formatReservationTotals(),
             'reservation_details' => $this->formatReservationDetails(),
-            'teus_total' => [
-                'daily' => $this->dailyTEUS['total_teus'],
-                'weekly' => $this->weeklyTEUS['total_teus'],
-                'monthly' => $this->monthlyTEUS['total_teus'],
-                'grand_total' => $this->totalTEUS['total_teus'],
-            ],
+            'teus_total' => $this->formatTeusTotals(),
             'teu_details' => $this->formatTeusDetails(),
-            'companies_total' => $this->countNumberOfCompanies(),
+            'companies_total' => $this->totalNumberOfCompanies(),
             'company_with_reservations' => $this->formatCompaniesWithReservation()
         ]);
     }

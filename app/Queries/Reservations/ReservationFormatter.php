@@ -3,6 +3,24 @@ namespace App\Queries\Reservations;
 
 trait ReservationFormatter
 {
+    use ReservationCount, TeuCount, ReservedCompaniesCount, ReservationComputation;
+
+    /**
+     * Format reservations total
+     *
+     * @return array
+     */
+    public function formatReservationTotals()
+    {
+        return [
+            'daily' => $this->computeDailyReservations(),
+            'weekly' => $this->computeWeeklyReservations(),
+            'monthly' => $this->computeMonthlyReservations(),
+            'grand_total' => $this->computeTotalReservations(),
+        ];
+    }
+
+
     /**
      * Format reservation details query
      *
@@ -49,6 +67,49 @@ trait ReservationFormatter
         ];
     }
 
+
+    /**
+     * Format teus totals
+     *
+     * @return array
+     */
+    public function formatTeusTotals()
+    {
+        return [
+            'daily' => $this->dailyTEUS['total_teus'],
+            'weekly' => $this->weeklyTEUS['total_teus'],
+            'monthly' => $this->monthlyTEUS['total_teus'],
+            'grand_total' => $this->totalTEUS['total_teus'],
+        ];
+    }
+
+
+    /**
+     * Format teus details query
+     *
+     * @return array
+     */
+    protected function formatTeusDetails()
+    {
+        return [
+            'domestic' => [
+                'label' => 'Shipping (Domestic)',
+                'daily' => $this->dailyDomesticShippingTEUS,
+                'weekly' => $this->weeklyDomesticShippingTEUS,
+                'monthly' => $this->monthlyDomesticShippingTEUS,
+                'total' => $this->totalDomesticShippingTEUS,
+            ],
+            'international' => [
+                'label' => 'Shipping (International)',
+                'daily' => $this->dailyInternationalShippingTEUS,
+                'weekly' => $this->weeklyInternationalShippingTEUS,
+                'monthly' => $this->monthlyInternationalShippingTEUS,
+                'total' => $this->totalInternationalShippingTEUS,
+            ]
+        ];
+    }
+
+
     /**
      * Format companies with reservations details query
      *
@@ -91,31 +152,6 @@ trait ReservationFormatter
                 'weekly' => $this->weeklyWarehouseCompanies,
                 'monthly' => $this->monthlyWarehouseCompanies,
                 'total' => $this->totalWarehouseCompanies
-            ]
-        ];
-    }
-
-    /**
-     * Format teus details query
-     *
-     * @return array
-     */
-    protected function formatTeusDetails()
-    {
-        return [
-            'domestic' => [
-                'label' => 'Shipping (Domestic)',
-                'daily' => $this->dailyDomesticShippingTEUS,
-                'weekly' => $this->weeklyDomesticShippingTEUS,
-                'monthly' => $this->monthlyDomesticShippingTEUS,
-                'total' => $this->totalDomesticShippingTEUS,
-            ],
-            'international' => [
-                'label' => 'Shipping (International)',
-                'daily' => $this->dailyInternationalShippingTEUS,
-                'weekly' => $this->weeklyInternationalShippingTEUS,
-                'monthly' => $this->monthlyInternationalShippingTEUS,
-                'total' => $this->totalInternationalShippingTEUS,
             ]
         ];
     }

@@ -45,7 +45,7 @@ trait ReservedCompaniesCount
      *
      * @return int
      */
-    private function countNumberOfCompanies()
+    private function totalNumberOfCompanies()
     {
         return ShippingReservation::distinct('shipper_id')->count('shipper_id');
     }
